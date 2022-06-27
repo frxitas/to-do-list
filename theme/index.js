@@ -1,4 +1,8 @@
-const theme = {};
+import icons from './icons'
+
+const theme = {
+  icons
+};
 
 const themeKeyMap = {
   borderRadius: "border-radius",
