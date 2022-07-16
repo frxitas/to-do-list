@@ -4,7 +4,7 @@ export const Card = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 300px;
+  width: 400px;
   height: 250px;
   border-radius: 5px;
   background-color: white;
@@ -12,6 +12,9 @@ export const Card = styled.div`
 `;
 
 export const CardContent = styled.div`
+  width: 100%;
   display: flex;
-  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 0 20px;
 `;

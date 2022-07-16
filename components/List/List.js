@@ -7,6 +7,7 @@ const List = () => {
   const { toDoList } = useSelector((store) => ({
     toDoList: store.todo.toDoList,
   }));
+  console.log(toDoList);
 
   return (
     <Styles.ListContent>
