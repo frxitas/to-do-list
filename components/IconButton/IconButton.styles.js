@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const IconButton = styled.button`
   width: 40px;
-  height: 40px;
+  height: 30px;
   background-color: blueviolet;
   border-radius: 5px;
   color: white;

@@ -13,19 +13,24 @@ const List = () => {
 		toDoList: store.todo.toDoList,
 	}));
 
-	const handleDeleteToDoItem = (item) => {
-		dispatch(deleteCurrentToDo(item));
+	const handleDeleteToDoItem = (task) => {
+		dispatch(deleteCurrentToDo(task));
 	};
 
 	return (
 		<Styles.ListContent>
 			<Styles.List>
-				{toDoList?.map((item) => (
-					<Styles.ListItem key={`${item.id}`}>
-						<Styles.ListItemText>{item.name}</Styles.ListItemText>
+				{toDoList?.map((task) => (
+					<Styles.ListItem key={`${task.id}`}>
+						<Styles.ListItemText>{task.name}</Styles.ListItemText>
+						{task.category && (
+							<Styles.ListItemCategory category={task.category}>
+								{task.category}
+							</Styles.ListItemCategory>
+						)}
 						<IconButton
 							icon={"delete"}
-							onClick={() => handleDeleteToDoItem(item)}
+							onClick={() => handleDeleteToDoItem(task)}
 						/>
 					</Styles.ListItem>
 				))}

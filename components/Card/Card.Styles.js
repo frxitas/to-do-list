@@ -13,10 +13,10 @@ export const Card = styled.div`
 export const CardContent = styled.div`
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;
 	padding: 10px;
 `;
 
 export const CardButton = styled.div`
-	padding-left: 10px;
-	margin-top: 30px;
+	margin-top: 10px;
 `;

@@ -12,6 +12,7 @@ const Card = () => {
 	const dispatch = useDispatch();
 
 	const [task, setTask] = useState("");
+	const [category, setCategory] = useState("");
 	const [generateId, setGenerateId] = useState(0);
 
 	const { toDoList } = useSelector((store) => ({
@@ -22,19 +23,41 @@ const Card = () => {
 		if (toDoList) setGenerateId(toDoList.length + 1);
 	}, [toDoList]);
 
-	const handleSetTask = (e) => {
+	const handleTask = (e) => {
 		setTask(e.target.value);
 	};
 
+	const handleCategory = (e) => {
+		setCategory(e.target.value);
+	};
+
 	const createNewTask = () => {
-		dispatch(createNewToDo({ id: generateId, name: task }));
+		dispatch(
+			createNewToDo({
+				id: generateId,
+				name: task,
+				category: category ? category : "uncategorized",
+			}),
+		);
 		setTask("");
+		setCategory("");
 	};
 
 	return (
 		<Styles.Card>
 			<Styles.CardContent>
-				<Input label={"Task"} placeholder={"Insert a task"} value={task} onChange={handleSetTask} />
+				<Input
+					label={"Task"}
+					placeholder={"Insert a task"}
+					value={task}
+					onChange={handleTask}
+				/>
+				<Input
+					label={"Category"}
+					placeholder={"Insert a category"}
+					value={category}
+					onChange={handleCategory}
+				/>
 				<Styles.CardButton>
 					<IconButton icon={"add"} onClick={createNewTask} />
 				</Styles.CardButton>

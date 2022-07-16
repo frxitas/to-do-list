@@ -5,10 +5,12 @@ export const Content = styled.div`
   justify-content: space-between;
   align-content: center;
   flex-direction: column;
-  margin: 10px;
+  padding: 40px;
   width: 1200px;
   height: 100%;
-  border: 1px solid red;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
 `;
 
 export const ContentTitle = styled.div`

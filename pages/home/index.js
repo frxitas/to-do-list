@@ -14,7 +14,7 @@ import DefaultLayout from "../../layout/DefaultLayout";
 const HomePage = () => {
   return (
     <DefaultLayout>
-      <Content title={"To Do List"} actions={<Input />}>
+      <Content title={"To Do List"} actions={<Input placeholder={'Search a task'} />}>
         <Card />
         <List />
       </Content>
