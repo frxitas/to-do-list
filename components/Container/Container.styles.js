@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  align-items: top;
+  align-items: flex-start;
   width: 100%;
   min-height: 100vh;
   background-color: white;

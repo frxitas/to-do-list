@@ -2,7 +2,7 @@ import React, { forwardRef, useCallback, useState } from "react";
 
 import * as Styles from "./Input.styles";
 
-const Input = forwardRef(({ label, ...restProps }, ref) => {
+const Input = forwardRef(({ label, placeholder, ...restProps }, ref) => {
   const [isInputFocused, setIsInputFocused] = useState(false);
 
   const handleOnBlur = useCallback((e) => {
@@ -36,6 +36,7 @@ const Input = forwardRef(({ label, ...restProps }, ref) => {
       )}
       <Styles.InputTag
         ref={ref}
+        placeholder={placeholder}
         {...restProps}
         name={restProps?.name}
         onBlur={handleOnBlur}
@@ -48,4 +49,4 @@ const Input = forwardRef(({ label, ...restProps }, ref) => {
 
 export default Input;
 
-Input.displayName = "Input"
+Input.displayName = "Input";

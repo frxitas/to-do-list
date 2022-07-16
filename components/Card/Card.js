@@ -34,7 +34,7 @@ const Card = () => {
 	return (
 		<Styles.Card>
 			<Styles.CardContent>
-				<Input label={"Insert a to do"} value={task} onChange={handleSetTask} />
+				<Input label={"Task"} placeholder={"Insert a task"} value={task} onChange={handleSetTask} />
 				<Styles.CardButton>
 					<IconButton icon={"add"} onClick={createNewTask} />
 				</Styles.CardButton>

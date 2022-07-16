@@ -37,7 +37,7 @@ export const InputLabel = styled.label`
 export const InputTag = styled.input`
   background-color: white;
   border: 1.5px solid lightgrey;
-  width: 200px;
+  width: 300px;
   height: 40px;
   line-height: 150%;
   padding: 0 10px;
