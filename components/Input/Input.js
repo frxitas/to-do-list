@@ -47,3 +47,5 @@ const Input = forwardRef(({ label, ...restProps }, ref) => {
 });
 
 export default Input;
+
+Input.displayName = "Input"

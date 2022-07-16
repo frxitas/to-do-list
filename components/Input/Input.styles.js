@@ -44,6 +44,7 @@ export const InputTag = styled.input`
   position: relative;
   outline: none;
   border-radius: 5px;
+  font-size: 14px;
 
   :focus {
     border: 1.5px solid blueviolet;
