@@ -4,8 +4,7 @@ export const Container = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+	flex-direction: column;
 	width: 100%;
-	min-height: 100vh;
-	background: linear-gradient(150deg, #9900ff 33%, #9900cc 73%);
-	padding: 20px;
+	height: 100vh;
 `;

@@ -8,40 +8,63 @@ export const ListContent = styled.div`
 	flex-direction: column;
 	width: 1200px;
 	height: 100%;
-	min-height: 80px;
-	margin: 20px 0px 0px 0px;
+	min-height: 200px;
+	padding: 20px;
+	border-left: 1.5px solid lightgrey;
 `;
 
 export const List = styled.ul`
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	flex-wrap: wrap;
+	height: 100%;
 	width: 100%;
 	list-style: none;
-	border-radius: 5px;
-	padding: 10px 0px;
+	column-gap: 14px;
 `;
 
 export const ListItem = styled.li`
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: left;
 	justify-content: space-between;
-	height: 40px;
-	width: 100%;
-	margin: 10px 0px 10px 10px;
-	padding-right: 10px;
-	border: 1.5px solid lightgrey;
-	border-radius: 5px;
+	height: 160px;
+	width: 200px;
+	padding: 12px;
+	box-shadow: 2px 2px 5px lightgrey;
+	border-radius: 4px;
 `;
 
-export const ListItemText = styled.span`
+export const Title = styled.div`
 	display: flex;
-	align-items: center;
-	justify-content: left;
-	height: 40px;
-	font-size: 14px;
-	margin-right: 20px;
-	padding: 5px 10px;
-	color: blueviolet;
 	width: 100%;
+	height: 40px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+`
+
+export const ListItemText = styled.span`
+	font-size: 14px;
+	font-weight: 500;
+	color: black;
+	width: 100%;
+
+	${({ isChecked }) =>
+		isChecked == true &&
+		css`
+			text-decoration: line-through;
+			color: darkgrey;
+		`}
 `;
+
+export const Actions = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+`
 
 export const ListItemCategory = styled.span`
 	${({ category }) =>
@@ -52,12 +75,18 @@ export const ListItemCategory = styled.span`
 		(category == "Estudos" &&
 			css`
 				background-color: lightcoral;
+			`) ||
+		(category == "Lembretes" &&
+			css`
+				background-color: lightgreen;
 			`)}
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 80px;
 	height: 30px;
-	font-size: 12px;
+	font-size: 14px;
 	margin-right: 10px;
+	border-radius: 4px;
+	padding: 6px;
 `;

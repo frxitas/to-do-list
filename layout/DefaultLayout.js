@@ -1,9 +1,15 @@
 import React from "react";
 
 import Container from "../components/Container";
+import { Header } from "../components/Header/Header.styles";
 
 const DefaultLayout = ({ children }) => {
-  return <Container>{children}</Container>;
+	return (
+		<Container>
+			<Header />
+			{children}
+		</Container>
+	);
 };
 
 export default DefaultLayout;

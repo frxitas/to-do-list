@@ -1,8 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-	toDoItem: null,
-	toDoList: [],
+	toDoList: [
+		{
+			id: 1,
+			name: "task",
+			category: "Deveres",
+			checked: false,
+		},
+		{
+			id: 2,
+			name: "task",
+			category: "Lembretes",
+			checked: false,
+		},
+		{
+			id: 3,
+			name: "task",
+			category: "Estudos",
+			checked: false,
+		},
+		{
+			id: 4,
+			name: "task",
+			category: "Estudos",
+			checked: false,
+		},
+	],
 };
 
 const { actions, reducer } = createSlice({
@@ -20,9 +44,12 @@ const { actions, reducer } = createSlice({
 				}
 			}
 		},
+		updateTodoList: (state, { payload }) => {
+			state.toDoList = payload;
+		},
 	},
 });
 
-export const { createNewToDo, deleteCurrentToDo } = actions;
+export const { createNewToDo, deleteCurrentToDo, updateTodoList } = actions;
 
 export default reducer;

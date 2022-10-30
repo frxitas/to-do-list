@@ -7,12 +7,13 @@ import * as Styles from "./Card.Styles";
 
 import { createNewToDo } from "../../store/slices/todoSlice";
 import IconButton from "../IconButton";
+import Select from "../Select/Select";
 
 const Card = () => {
 	const dispatch = useDispatch();
 
 	const [task, setTask] = useState("");
-	const [category, setCategory] = useState("");
+	const [category, setCategory] = useState("Estudos");
 	const [generateId, setGenerateId] = useState(0);
 
 	const { toDoList } = useSelector((store) => ({
@@ -36,7 +37,8 @@ const Card = () => {
 			createNewToDo({
 				id: generateId,
 				name: task,
-				category: category ? category : "uncategorized",
+				category: category,
+				checked: false,
 			}),
 		);
 		setTask("");
@@ -52,12 +54,16 @@ const Card = () => {
 					value={task}
 					onChange={handleTask}
 				/>
-				<Input
+				<Select
 					label={"Category"}
 					placeholder={"Insert a category"}
 					value={category}
 					onChange={handleCategory}
-				/>
+				>
+					<option value={"Estudos"}>Estudos</option>
+					<option value={"Deveres"}>Deveres</option>
+					<option value={"Lembretes"}>Lembretes</option>
+				</Select>
 				<Styles.CardButton>
 					<IconButton icon={"add"} onClick={createNewTask} />
 				</Styles.CardButton>

@@ -1,18 +1,29 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const IconButton = styled.button`
-  width: 40px;
-  height: 30px;
-  background-color: blueviolet;
-  border-radius: 5px;
-  color: white;
-  border: none;
-  outline: none;
-  transition: ease-in-out;
+	${({ size }) =>
+		(size == "sm" &&
+			css`
+				width: 40px;
+				height: 30px;
+			`) ||
+		(size == "md" &&
+			css`
+				width: 40px;
+				height: 40px;
+			`)}
 
-  &:hover {
-    transition-duration: 125ms;
-    box-shadow: 0px 0px 3px blueviolet;
-    cursor: pointer;
-  }
+	background-color: blueviolet;
+	border-radius: 4px;
+	color: white;
+	border: none;
+	outline: none;
+	transition: ease-in-out;
+
+	&:hover {
+		transition-duration: 125ms;
+		box-shadow: 0px 0px 3px blueviolet;
+		cursor: pointer;
+	}
 `;
