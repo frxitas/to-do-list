@@ -5,7 +5,7 @@ export const IconButton = styled.button`
 	${({ size }) =>
 		(size == "sm" &&
 			css`
-				width: 40px;
+				width: 30px;
 				height: 30px;
 			`) ||
 		(size == "md" &&

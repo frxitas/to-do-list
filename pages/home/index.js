@@ -1,3 +1,4 @@
+import { FileSearch, MagnifyingGlass } from "phosphor-react";
 import React, { useState } from "react";
 
 /** COMPONENTS */
@@ -21,9 +22,9 @@ const HomePage = () => {
 
   return (
     <DefaultLayout>
-      <Content title={"To Do List"} actions={<Input onChange={(e) => handleOnChange(e)} placeholder={'Search a task'} />}>
+      <Content title={"To Do List"} actions={<Input icon={<MagnifyingGlass size={18} />} onChange={(e) => handleOnChange(e)} placeholder={'Search a task'} />}>
         <Card />
-        <List filter={filter}/>
+        <List filter={filter} />
       </Content>
     </DefaultLayout>
   );

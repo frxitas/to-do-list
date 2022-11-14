@@ -1,8 +1,9 @@
+import { FileSearch } from "phosphor-react";
 import React, { forwardRef, useCallback, useState } from "react";
 
 import * as Styles from "./Input.styles";
 
-const Input = forwardRef(({ label, placeholder, ...restProps }, ref) => {
+const Input = forwardRef(({ label, placeholder, icon, ...restProps }, ref) => {
   const [isInputFocused, setIsInputFocused] = useState(false);
 
   const handleOnBlur = useCallback((e) => {
@@ -43,6 +44,9 @@ const Input = forwardRef(({ label, placeholder, ...restProps }, ref) => {
         onChange={handleOnChange}
         onFocus={handleOnFocus}
       />
+      {icon && (
+        icon
+      )}
     </Styles.Input>
   );
 });

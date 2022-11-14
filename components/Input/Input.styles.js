@@ -8,6 +8,23 @@ export const Input = styled.div`
         position: relative;
         width: 100%;
   `}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1.5px solid lightgrey;
+  width: 300px;
+  height: 40px;
+  line-height: 150%;
+  padding: 0 10px;
+  position: relative;
+  outline: none;
+  border-radius: 5px;
+  font-size: 14px;
+
+  :focus-within {
+    border: 2px solid blueviolet;
+  }
 `;
 
 export const InputLabel = styled.label`
@@ -36,17 +53,11 @@ export const InputLabel = styled.label`
 
 export const InputTag = styled.input`
   background-color: white;
-  border: 1.5px solid lightgrey;
-  width: 300px;
-  height: 40px;
+  width: 260px;
+  height: 30px;
   line-height: 150%;
-  padding: 0 10px;
   position: relative;
+  border: none;
   outline: none;
-  border-radius: 5px;
-  font-size: 14px;
-
-  :focus {
-    border: 2px solid blueviolet;
-  }
+  font-size: 16px;
 `;

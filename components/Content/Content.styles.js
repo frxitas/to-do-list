@@ -9,7 +9,6 @@ export const Content = styled.div`
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 10px;
   background-color: white;
   gap: 8px;
 `;
@@ -29,13 +28,13 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
   align-content: center;
   flex-direction: row;
-  padding: 10px;
+  padding: 6px 16px;
   gap: 4px;
 `;
 
 export const ContentData = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: flex-start;
   flex-direction: row;
   width: 100%;

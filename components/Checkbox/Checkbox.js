@@ -12,16 +12,15 @@ const Checkbox = ({ onChange, isChecked }) => {
 				onChange={onChange}
 			/>
 			<Check
-				size={16}
+				size={22}
 				weight={"bold"}
 				style={{
 					display: "inline-block",
-					height: "18px",
-					width: "18px",
+					height: "22px",
+					width: "22px",
 					background: isChecked ? "blueviolet" : "#fff",
 					border: isChecked ? "2px blueviolet solid" : "2px #ddd solid",
 					borderRadius: "4px",
-					marginRight: "4px",
 					color: isChecked ? " #FFF" : "transparent",
 					cursor: "pointer",
 				}}

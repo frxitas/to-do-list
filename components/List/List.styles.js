@@ -9,7 +9,7 @@ export const ListContent = styled.div`
 	width: 1200px;
 	height: 100%;
 	min-height: 200px;
-	padding: 20px;
+	padding: 0px 16px;
 	border-left: 1.5px solid lightgrey;
 `;
 
@@ -21,7 +21,7 @@ export const List = styled.ul`
 	height: 100%;
 	width: 100%;
 	list-style: none;
-	column-gap: 14px;
+	column-gap: 16px;
 `;
 
 export const ListItem = styled.li`
@@ -42,14 +42,19 @@ export const Title = styled.div`
 	height: 40px;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
+	/* align-items: center; */
 `
 
 export const ListItemText = styled.span`
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 500;
 	color: black;
 	width: 100%;
+	cursor: pointer;
+
+	:hover {
+		text-decoration: underline;
+	}
 
 	${({ isChecked }) =>
 		isChecked == true &&
@@ -63,10 +68,16 @@ export const Actions = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-end;
 `
 
-export const ListItemCategory = styled.span`
+export const CategoryWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+`
+
+export const Category = styled.span`
 	${({ category }) =>
 		(category == "Deveres" &&
 			css`
@@ -83,8 +94,8 @@ export const ListItemCategory = styled.span`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 80px;
-	height: 30px;
+	width: fit-content;
+	height: 26px;
 	font-size: 14px;
 	margin-right: 10px;
 	border-radius: 4px;

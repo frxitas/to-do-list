@@ -64,9 +64,12 @@ const List = (props) => {
 							</Styles.Title>
 							<Styles.Actions>
 								{task.category && (
-									<Styles.ListItemCategory category={task.category}>
-										{task.category}
-									</Styles.ListItemCategory>
+									<Styles.CategoryWrapper>
+										Categoria:
+										<Styles.Category category={task.category}>
+											{task.category}
+										</Styles.Category>
+									</Styles.CategoryWrapper>
 								)}
 								<IconButton
 									icon={"delete"}

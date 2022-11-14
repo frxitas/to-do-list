@@ -2,21 +2,20 @@ import styled from "@emotion/styled";
 
 export const Card = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	align-items: center;
-	width: 400px;
+	width: fit-content;
 	height: fit-content;
 	background-color: transparent;
-	/* margin: 0 20px; */
+	padding: 0px 16px;
 `;
 
 export const CardContent = styled.div`
 	display: flex;
-	justify-content: space-between;
 	flex-direction: column;
-	padding: 10px;
+	gap: 1rem;
 `;
 
 export const CardButton = styled.div`
-	margin-top: 10px;
+	/* margin-top: 10px; */
 `;
