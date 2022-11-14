@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 /** COMPONENTS */
 import Card from "../../components/Card";
@@ -12,11 +12,18 @@ import DefaultLayout from "../../layout/DefaultLayout";
 /** END LAYOUT */
 
 const HomePage = () => {
+  const [filter, setFilter] = useState('');
+
+  const handleOnChange = (e) => {
+    e.preventDefault();
+    setFilter(e.target.value)
+  }
+
   return (
     <DefaultLayout>
-      <Content title={"To Do List"} actions={<Input placeholder={'Search a task'} />}>
+      <Content title={"To Do List"} actions={<Input onChange={(e) => handleOnChange(e)} placeholder={'Search a task'} />}>
         <Card />
-        <List />
+        <List filter={filter}/>
       </Content>
     </DefaultLayout>
   );

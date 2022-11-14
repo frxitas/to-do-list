@@ -10,7 +10,7 @@ import {
 import IconButton from "../IconButton";
 import Checkbox from "../Checkbox/Checkbox";
 
-const List = () => {
+const List = (props) => {
 	const dispatch = useDispatch();
 
 	const [tasks, setTasks] = useState([]);
@@ -18,7 +18,6 @@ const List = () => {
 	const { toDoList } = useSelector((store) => ({
 		toDoList: store.todo.toDoList,
 	}));
-	// console.log(toDoList);
 
 	useEffect(() => {
 		if (toDoList !== []) setTasks(toDoList);
@@ -41,30 +40,41 @@ const List = () => {
 	return (
 		<Styles.ListContent>
 			<Styles.List>
-				{toDoList?.map((task) => (
-					<Styles.ListItem key={`${task.id}`}>
-						<Styles.Title>
-							<Styles.ListItemText isChecked={task.checked}>
-								{task.name}
-							</Styles.ListItemText>
-							<Checkbox
-								onChange={() => handleIsChecked(task)}
-								isChecked={task.checked}
-							/>
-						</Styles.Title>
-						<Styles.Actions>
-							{task.category && (
-								<Styles.ListItemCategory category={task.category}>
-									{task.category}
-								</Styles.ListItemCategory>
-							)}
-							<IconButton
-								icon={"delete"}
-								onClick={() => handleDeleteToDoItem(task)}
-							/>
-						</Styles.Actions>
-					</Styles.ListItem>
-				))}
+				{toDoList
+					?.filter((value) => {
+						if (value == "") return value;
+						else if (
+							value.name
+								.toString()
+								.toLowerCase()
+								.includes(props.filter.toLowerCase())
+						)
+							return value;
+					})
+					.map((task) => (
+						<Styles.ListItem key={`${task.id}`}>
+							<Styles.Title>
+								<Styles.ListItemText isChecked={task.checked}>
+									{task.name}
+								</Styles.ListItemText>
+								<Checkbox
+									onChange={() => handleIsChecked(task)}
+									isChecked={task.checked}
+								/>
+							</Styles.Title>
+							<Styles.Actions>
+								{task.category && (
+									<Styles.ListItemCategory category={task.category}>
+										{task.category}
+									</Styles.ListItemCategory>
+								)}
+								<IconButton
+									icon={"delete"}
+									onClick={() => handleDeleteToDoItem(task)}
+								/>
+							</Styles.Actions>
+						</Styles.ListItem>
+					))}
 			</Styles.List>
 		</Styles.ListContent>
 	);

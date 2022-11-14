@@ -10,19 +10,19 @@ const Input = forwardRef(({ label, placeholder, ...restProps }, ref) => {
 
     if (restProps?.onBlur && typeof restProps.onBlur === "function")
       restProps?.onBlur(e);
-  });
+  }, [restProps]);
 
   const handleOnChange = useCallback((e) => {
     if (restProps?.onChange && typeof restProps.onChange === "function")
       restProps?.onChange(e);
-  });
+  }, [restProps]);
 
   const handleOnFocus = useCallback((e) => {
     setIsInputFocused(true);
 
     if (restProps?.onFocus && typeof restProps.onFocus === "function")
       restProps?.onFocus(e);
-  });
+  }, [restProps]);
 
   return (
     <Styles.Input hasLabel={label}>
