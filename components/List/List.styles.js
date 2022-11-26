@@ -26,17 +26,18 @@ export const ListInfo = styled.div`
 export const ListLength = styled.span`
 	font-size: 16px;
 	color: black;
-`
+`;
 
 export const List = styled.ul`
 	display: flex;
 	flex-direction: row;
 	justify-content: left;
 	flex-wrap: wrap;
-	height: 100%;
+	/* height: 100%; */
 	width: 100%;
 	list-style: none;
-	column-gap: 16px;
+	gap: 12px;
+	/* column-gap: 16px'; */
 `;
 
 export const ListItem = styled.li`
@@ -54,11 +55,11 @@ export const ListItem = styled.li`
 export const Title = styled.div`
 	display: flex;
 	width: 100%;
-		flex-direction: row;
+	flex-direction: row;
 	justify-content: left;
 	gap: 8px;
 	align-items: center;
-`
+`;
 
 export const ListItemText = styled.span`
 	font-size: 18px;
@@ -84,13 +85,13 @@ export const Actions = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-end;
-`
+`;
 
 export const CategoryWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
-`
+`;
 
 export const Category = styled.span`
 	${({ category }) =>
