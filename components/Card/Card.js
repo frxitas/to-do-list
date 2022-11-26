@@ -49,8 +49,8 @@ const Card = () => {
 		<Styles.Card>
 			<Styles.CardContent>
 				<Input
-					label={"Task"}
-					placeholder={"Insert a task"}
+					label={"Name"}
+					placeholder={"Insert a name"}
 					value={task}
 					onChange={handleTask}
 				/>

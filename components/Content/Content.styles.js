@@ -5,7 +5,7 @@ export const Content = styled.div`
   justify-content: space-between;
   align-content: center;
   flex-direction: column;
-  padding: 16px;
+  padding: 24px 16px 0px 16px;
   width: 100%;
   height: 100%;
   border: none;
@@ -17,19 +17,6 @@ export const ContentTitle = styled.div`
   display: flex;
   font-size: 22px;
   font-weight: 500;
-`;
-
-export const ContentActions = styled.div`
-
-`;
-
-export const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  flex-direction: row;
-  padding: 6px 16px;
-  gap: 4px;
 `;
 
 export const ContentData = styled.div`

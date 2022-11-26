@@ -14,7 +14,7 @@ function CustomApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Global styles={globalStyles} />
         <Head>
-          <title>To Do List</title>
+          <title>To do | By Guilherme Freitas</title>
         </Head>
         <Component {...pageProps} />
       </ThemeProvider>

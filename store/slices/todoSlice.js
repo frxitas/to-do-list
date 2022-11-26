@@ -1,32 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-	toDoList: [
-		{
-			id: 1,
-			name: "task",
-			category: "Deveres",
-			checked: false,
-		},
-		{
-			id: 2,
-			name: "task",
-			category: "Lembretes",
-			checked: false,
-		},
-		{
-			id: 3,
-			name: "task",
-			category: "Estudos",
-			checked: false,
-		},
-		{
-			id: 4,
-			name: "task",
-			category: "Estudos",
-			checked: false,
-		},
-	],
+	toDoList: [],
 };
 
 const { actions, reducer } = createSlice({
@@ -37,10 +12,10 @@ const { actions, reducer } = createSlice({
 			state.toDoList.push(payload);
 		},
 		deleteCurrentToDo: (state, { payload }) => {
-			for (let i = 0; i < state.toDoList.length; i++) {
-				if (state.toDoList[i].id == payload.id) {
-					state.toDoList.splice(i, 1);
-					i--;
+			for (let index in state.toDoList) {
+				if (state.toDoList[index].id == payload.id) {
+					state.toDoList.splice(index, 1);
+					index--;
 				}
 			}
 		},

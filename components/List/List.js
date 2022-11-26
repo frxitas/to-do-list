@@ -39,6 +39,9 @@ const List = (props) => {
 
 	return (
 		<Styles.ListContent>
+			<Styles.ListInfo>
+				<Styles.ListLength>Tasks: ({toDoList?.length})</Styles.ListLength>
+			</Styles.ListInfo>
 			<Styles.List>
 				{toDoList
 					?.filter((value) => {
@@ -54,22 +57,19 @@ const List = (props) => {
 					.map((task) => (
 						<Styles.ListItem key={`${task.id}`}>
 							<Styles.Title>
-								<Styles.ListItemText isChecked={task.checked}>
-									{task.name}
-								</Styles.ListItemText>
 								<Checkbox
 									onChange={() => handleIsChecked(task)}
 									isChecked={task.checked}
 								/>
+								<Styles.ListItemText isChecked={task.checked}>
+									{task.name}
+								</Styles.ListItemText>
 							</Styles.Title>
 							<Styles.Actions>
 								{task.category && (
-									<Styles.CategoryWrapper>
-										Categoria:
-										<Styles.Category category={task.category}>
-											{task.category}
-										</Styles.Category>
-									</Styles.CategoryWrapper>
+									<Styles.Category category={task.category}>
+										{task.category}
+									</Styles.Category>
 								)}
 								<IconButton
 									icon={"delete"}

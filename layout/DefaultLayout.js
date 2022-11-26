@@ -1,12 +1,11 @@
 import React from "react";
 
 import Container from "../components/Container";
-import { Header } from "../components/Header/Header.styles";
+import { Header } from "../components/Header";
 
 const DefaultLayout = ({ children }) => {
 	return (
 		<Container>
-			<Header />
 			{children}
 		</Container>
 	);

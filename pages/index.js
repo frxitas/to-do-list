@@ -8,7 +8,7 @@ export default function Home() {
     router.push({
       pathname: "/home",
     });
-  }, []);
+  }, [router]);
 
   return null;
 }
