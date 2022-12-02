@@ -6,6 +6,7 @@ const { parsed } = dotEnv.config({
   path: `${__dirname}/env/.env.${ env.toLowerCase() }`,
 });
 /** END ENVS */
+console.log(...parsed.NEXT_REACT_BASEPATH);
 
 module.exports = {
   ...parsed.NEXT_REACT_BASEPATH && { assetPrefix: parsed.NEXT_REACT_BASEPATH },
